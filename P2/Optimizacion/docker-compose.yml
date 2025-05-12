@@ -1,0 +1,12 @@
+version: '3.4'
+services:
+  db_v2:
+    image: postgres
+    environment:
+      POSTGRES_DB: optimized_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./db_v2:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5432" # Usamos otro puerto para evitar conflictos

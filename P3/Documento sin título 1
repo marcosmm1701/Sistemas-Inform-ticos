@@ -1,0 +1,20 @@
+INICIAR POSTGRES
+	sudo docker exec -it p3_pgdb_1 bash
+	
+ACCEDER A BASE DE DATOS
+	psql -U alumnodb -d si1 
+	
+Acceder al Cliente MongoDB
+	mongosh
+	use si1
+	show collections
+	db.france.find().limit(5).pretty()
+
+
+
+sudo systemctl stop postgresql
+
+
+sudo docker exec -it p3_pgdb_1 psql -U alumnodb -d si1 -f /actualiza.sql
+
+sudo docker exec -it p3_pgdb_1 psql -U alumnodb -d si1 -f /updPromo.sql

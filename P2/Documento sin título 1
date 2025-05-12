@@ -1,0 +1,37 @@
+para ejecutar consultas a la base de datos:
+
+
+sudo docker exec -it db_db_1 bash
+
+psql -U alumnodb -d si1
+
+
+
+
+Actualizar fichero: 
+
+# Elimina el archivo actual en el contenedor
+sudo docker exec material_p2_db_1 rm /actualiza.sql
+
+# Copia nuevamente el archivo actualizado
+sudo docker cp /home/marcos1701/Escritorio/Marcos.M/SI/SI/P2/material_P2/actualiza.sql material_p2_db_1:/actualiza.sql
+
+
+
+ejecutar (desde fuera):
+
+sudo docker cp /home/marcos1701/Escritorio/Marcos.M/SI/SI/P2/material_P2/actualiza.sql material_p2_db_1:/actualiza.sql
+
+sudo docker exec -it db_db_1 psql -U alumnodb -d si1 -f /actualiza.sql
+
+
+DETENER BASE POSTGRE
+
+sudo systemctl stop postgresql
+
+
+
+###  Libera espacio contenedores no utilizados:  ###
+
+sudo docker system prune -a
+

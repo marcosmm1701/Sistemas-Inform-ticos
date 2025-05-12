@@ -1,0 +1,17 @@
+
+services:
+  user_api:
+    build: ./User_Services
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./User_Services:/app
+    command: python3 user.py
+
+  file_api:
+    build: ./File_Services
+    ports:
+      - "5051:5051"
+    volumes:
+      - ./File_Services:/app
+    command: python3 file.py
